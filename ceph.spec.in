@@ -1551,7 +1551,6 @@ exit 0
 userdel -r cephadm || true
 exit 0
 %endif
-%endif
 
 %files -n cephadm
 %{_sbindir}/cephadm
