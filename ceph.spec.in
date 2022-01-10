@@ -1560,6 +1560,7 @@ exit 0
 %attr(0600,cephadm,cephadm) %{_sharedstatedir}/cephadm/.ssh/authorized_keys
 %endif
 
+%if "%{build_type}" != "rgw"
 %files common
 %dir %{_docdir}/ceph
 %doc %{_docdir}/ceph/sample.ceph.conf
@@ -1660,6 +1661,7 @@ if [ "$1" -eq "0" ] ; then
     rm -rf %{_localstatedir}/log/ceph
     rm -rf %{_sysconfdir}/ceph
 fi
+%endif
 
 %files mds
 %{_bindir}/ceph-mds
